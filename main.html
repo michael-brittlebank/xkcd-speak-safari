@@ -8,10 +8,10 @@
     function handleEndMessage(message){
         if (message.name === 'getData'){
             var jsonData = {};
-            message.target.page.dispatchMessage("returnData", jsonData);
+            message.target.page.dispatchMessage('returnData', jsonData);
         } else if (message.name === 'getSettings'){
             //todo
-            message.target.page.dispatchMessage("returnSettings", '');
+            message.target.page.dispatchMessage('returnSettings', '');
         }
     }
 
