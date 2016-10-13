@@ -23,6 +23,8 @@
 			<dict>
 				<key>Identifier</key>
 				<string>xkcd-speak</string>
+				<key>Image</key>
+				<string>build/assets/check_box.png</string>
 				<key>Include By Default</key>
 				<true/>
 				<key>Label</key>

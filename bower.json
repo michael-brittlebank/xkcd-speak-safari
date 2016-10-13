@@ -1,0 +1,15 @@
+{
+  "name": "XKCD-Speak-Safari",
+  "version": "0.1.0",
+  "authors": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "bluebird": "3.3.4",
+    "handlebars": "4.0.5"
+  }
+}
