@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script type="text/javascript" src="build/app.min.js"></script>
+    <script type="text/javascript" src="build/app.global.min.js"></script>
 </head>
 <body>
 <script>
-    function domLoaded(message){
-        if (message.name === 'domLoaded'){
-            xkcdExtension.start();
+    function handleEndMessage(message){
+        if (message.name === 'getData'){
+            var jsonData = {};
+            message.target.page.dispatchMessage("returnData", jsonData);
+        } else if (message.name === 'getSettings'){
+            //todo
+            message.target.page.dispatchMessage("returnSettings", '');
         }
     }
 
-    safari.application.addEventListener("message", domLoaded, false);
+    safari.application.addEventListener("message", handleEndMessage, false);
 </script>
 </body>
 </html>

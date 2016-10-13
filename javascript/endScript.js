@@ -1,1 +1,0 @@
-safari.self.tab.dispatchMessage('domLoaded','DOM loaded');

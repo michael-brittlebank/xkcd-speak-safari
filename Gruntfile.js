@@ -12,9 +12,13 @@ module.exports = function(grunt){
 
     //these define the folders and files that are watched by the "grunt dev" command
     var watchFiles = {
-        javascript: [
-            'javascript/**/*.js',
-            '!javascript/endScript.js'
+        mainJs: [
+            'javascript/app.main.js',
+            'javascript/main/**/*.js'
+        ],
+        endJs: [
+            'javascript/app.end.js',
+            'javascript/end/**/*.js'
         ],
         sass: [
             'sass/**/*.scss'
@@ -38,7 +42,7 @@ module.exports = function(grunt){
                     'build/tmp/app.handlebars.min.js',
                     'build/tmp/app.main.min.js'
                 ],
-                dest: 'build/app.min.js'
+                dest: 'build/app.global.min.js'
             }
         },
         /*
@@ -81,7 +85,15 @@ module.exports = function(grunt){
         jshint: {
             main: {
                 src: [
-                    watchFiles.javascript
+                    watchFiles.mainJs
+                ],
+                options: {
+                    jshintrc: true
+                }
+            },
+            end: {
+                src: [
+                    watchFiles.endJs
                 ],
                 options: {
                     jshintrc: true
@@ -141,9 +153,8 @@ module.exports = function(grunt){
             main: {
                 files: {
                     'build/tmp/app.main.min.js': [
-                        'javascript/app.js',
-                        'javascript/**/*.js',
-                        '!javascript/endScript.js'
+                        'javascript/app.main.js',
+                        'javascript/main/**/*.js'
                     ]
                 },
                 options: {
@@ -153,10 +164,10 @@ module.exports = function(grunt){
                     mangle: false
                 }
             },
-            endScript: {
+            end: {
                 files: {
-                    'build/endScript.min.js': [
-                        'javascript/endScript.js'
+                    'build/app.end.min.js': [
+                        'javascript/app.end.js'
                     ]
                 },
                 options: {
@@ -186,9 +197,16 @@ module.exports = function(grunt){
                     livereload: true
                 }
             },
-            javascript: {
-                files: watchFiles.javascript,
-                tasks: ['jshint','uglify:main','concat'],
+            mainJs: {
+                files: watchFiles.mainJs,
+                tasks: ['jshint:main','uglify:main','concat'],
+                options: {
+                    livereload: true
+                }
+            },
+            endJs: {
+                files: watchFiles.endJs,
+                tasks: ['jshint:end','uglify:end'],
                 options: {
                     livereload: true
                 }
