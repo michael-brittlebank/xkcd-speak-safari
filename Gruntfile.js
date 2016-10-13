@@ -20,9 +20,6 @@ module.exports = function(grunt){
         ],
         handlebars: [
             'handlebars/**/*.hbs'
-        ],
-        images: [
-            'assets/images/**/*'
         ]
     };
     grunt.initConfig({
@@ -165,14 +162,14 @@ module.exports = function(grunt){
             },
             handlebars: {
                 files: watchFiles.handlebars,
-                tasks: ['handlebars:compile'],
+                tasks: ['handlebars:compile','concat'],
                 options: {
                     livereload: true
                 }
             },
             javascript: {
                 files: watchFiles.javascript,
-                tasks: ['jshint','uglify:main'],
+                tasks: ['jshint','uglify:main','concat'],
                 options: {
                     livereload: true
                 }

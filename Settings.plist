@@ -12,7 +12,7 @@
 		<key>Title</key>
 		<string>test1</string>
 		<key>Type</key>
-		<string>TextField</string>
+		<string>PopUpButton</string>
 	</dict>
 </array>
 </plist>

@@ -32,6 +32,20 @@
 			</dict>
 		</array>
 	</dict>
+	<key>Content</key>
+	<dict>
+		<key>Scripts</key>
+		<dict>
+			<key>End</key>
+			<array>
+				<string>build/app.min.js</string>
+			</array>
+		</dict>
+		<key>Stylesheets</key>
+		<array>
+			<string>build/app.min.css</string>
+		</array>
+	</dict>
 	<key>Description</key>
 	<string>XKCD word substitutions and mannerisms</string>
 	<key>DeveloperIdentifier</key>
