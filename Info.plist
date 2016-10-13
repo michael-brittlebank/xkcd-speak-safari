@@ -18,6 +18,8 @@
 	<string>1</string>
 	<key>Chrome</key>
 	<dict>
+		<key>Global Page</key>
+		<string>main.html</string>
 		<key>Toolbar Items</key>
 		<array>
 			<dict>
@@ -38,7 +40,7 @@
 		<dict>
 			<key>End</key>
 			<array>
-				<string>build/app.min.js</string>
+				<string>build/endScript.min.js</string>
 			</array>
 		</dict>
 		<key>Stylesheets</key>

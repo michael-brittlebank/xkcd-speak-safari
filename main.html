@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="build/app.min.js"></script>
+</head>
+<body>
+<script>
+    function domLoaded(message){
+        if (message.name === 'domLoaded'){
+            xkcdExtension.start();
+        }
+    }
+
+    safari.application.addEventListener("message", domLoaded, false);
+</script>
+</body>
+</html>

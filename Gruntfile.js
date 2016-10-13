@@ -13,7 +13,8 @@ module.exports = function(grunt){
     //these define the folders and files that are watched by the "grunt dev" command
     var watchFiles = {
         javascript: [
-            'javascript/**/*.js'
+            'javascript/**/*.js',
+            '!javascript/endScript.js'
         ],
         sass: [
             'sass/**/*.scss'
@@ -23,6 +24,10 @@ module.exports = function(grunt){
         ]
     };
     grunt.initConfig({
+        /* 
+         Concatenates separate build process files
+         https://github.com/gruntjs/grunt-contrib-concat
+         */
         concat: {
             options: {
                 sourceMap: true
@@ -137,13 +142,27 @@ module.exports = function(grunt){
                 files: {
                     'build/tmp/app.main.min.js': [
                         'javascript/app.js',
-                        'javascript/**/*.js'
+                        'javascript/**/*.js',
+                        '!javascript/endScript.js'
                     ]
                 },
                 options: {
                     banner: '/*! <%= grunt.template.today("yyyy-mm-dd") %> */\n',
                     sourceMap: true,
                     preserveComments: 'some',
+                    mangle: false
+                }
+            },
+            endScript: {
+                files: {
+                    'build/endScript.min.js': [
+                        'javascript/endScript.js'
+                    ]
+                },
+                options: {
+                    banner: '/*! <%= grunt.template.today("yyyy-mm-dd") %> */\n',
+                    sourceMap: false,
+                    preserveComments: false,
                     mangle: false
                 }
             }
