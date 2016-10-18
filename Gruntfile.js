@@ -17,7 +17,8 @@ module.exports = function(grunt){
             'javascript/main/**/*.js'
         ],
         endJs: [
-            'javascript/app.end.js'
+            'javascript/app.end.js',
+            'javascript/end/**/*.js'
         ],
         sass: [
             'sass/**/*.scss'
@@ -166,7 +167,8 @@ module.exports = function(grunt){
             end: {
                 files: {
                     'build/app.end.min.js': [
-                        'javascript/app.end.js'
+                        'javascript/app.end.js',
+                        'javascript/end/**/*.js'
                     ]
                 },
                 options: {

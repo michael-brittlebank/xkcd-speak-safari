@@ -1,0 +1,13 @@
+{
+  "comics": [
+    {
+      "url":"https://xkcd.com/1704/",
+      "translations":[
+        {
+          "find":"no man",
+          "replace":"Gnome Ann"
+        }
+      ]
+    }
+  ]
+}

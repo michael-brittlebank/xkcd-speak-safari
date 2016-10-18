@@ -7,8 +7,8 @@
 <script>
     function handleEndMessage(message){
         if (message.name === 'getData'){
-            var jsonData = {};
-            message.target.page.dispatchMessage('returnData', jsonData);
+            var data = mainApp.data.getFormattedData();
+            message.target.page.dispatchMessage('returnData', data);
         } else if (message.name === 'getSettings'){
             //todo
             message.target.page.dispatchMessage('returnSettings', '');

@@ -1,28 +1,29 @@
 /*
  Main extension logic
  */
-var app = {};
+var endApp = {
+    helpers: {}
+};
 
 (function(){
     //variables
-    var that = app;
-
-    this.start = function(){
-        console.log('ive started');
+    var that = endApp;
+    
+    //functions
+    this.start = function(jsonData){
         var documentTree = document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null,false),
             nodeValue;
         while(documentTree.nextNode()) {
-            nodeValue = documentTree.currentNode.nodeValue;
-            documentTree.currentNode.nodeValue = that.replaceString(nodeValue,'Google','Yahoo');
+            if (documentTree.currentNode.nodeType === Node.TEXT_NODE) {
+                nodeValue = documentTree.currentNode.nodeValue;
+                for(var i = 0; i < jsonData.length; i++){
+                    documentTree.currentNode.nodeValue = that.helpers.replaceString(nodeValue, jsonData[i].find, jsonData[i].replace);
+                }
+            }
         }
-        console.log('im done');
     };
 
-    this.replaceString = function(context, find, replace){
-        return context.replace(new RegExp(find, 'gi'), replace);
-    };
-
-}).apply(app);
+}).apply(endApp);
 
 
 /*
@@ -31,8 +32,7 @@ var app = {};
 
 function handleGlobalMessage(message){
     if (message.name === 'returnData'){
-        console.log('data returned',message.message);
-        app.start();
+        endApp.start(message.message);
     } else if (message.name === 'returnSettings'){
         //todo
     }
