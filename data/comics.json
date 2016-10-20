@@ -1,0 +1,97 @@
+{
+  "comics": [
+    {
+      "url":"https://xkcd.com/1704/",
+      "translations":[
+        {
+          "find":"no man",
+          "replace":"Gnome Ann"
+        }
+      ]
+    },
+    {
+      "url":"http://xkcd.com/18/",
+      "translations":[
+        {
+          "find":"Snapple",
+          "replace":"an apple infused with tin"
+        }
+      ]
+    },
+    {
+      "url":"http://xkcd.com/27/",
+      "translations":[
+        {
+          "find":"Fruit Loops",
+          "replace":"Pork Loops"
+        },
+        {
+          "find":"Rice Krispies",
+          "replace":"Mice Krispies"
+        },
+        {
+          "find":"Cheerios",
+          "replace":"Hammios"
+        },
+        {
+          "find":"Frosted Flakes",
+          "replace":"Frosted Baconflakes"
+        },
+        {
+          "find":"Honey Bunches of Oats",
+          "replace":"Honey Bunches of Goats"
+        },
+        {
+          "find":"Apple Jacks",
+          "replace":"Scrapple Jacks"
+        }
+      ]
+    },
+    {
+      "url":"http://xkcd.com/72/",
+      "translations":[
+        {
+          "find":"asshole",
+          "replace":"classhole"
+        }
+      ]
+    },
+    {
+      "url":"http://xkcd.com/107/",
+      "translations":[
+        {
+          "find":"Snakes on a Plane",
+          "replace":"Snakes on Every Plane"
+        }
+      ]
+    },
+    {
+      "url":"http://xkcd.com/110/",
+      "translations":[
+        {
+          "find":"I don't give a damn",
+          "replace":"I couldn't care less"
+        }
+      ]
+    },
+    {
+      "url":"http://xkcd.com/127/",
+      "translations":[
+        {
+          "find":"Tokyo Drift",
+          "replace":"Tokyo Dash"
+        }
+      ]
+    },
+    {
+      "url":"http://xkcd.com/181/",
+      "translations":[
+        {
+          "find":"Internet",
+          "replace":"Interblag"
+        }
+      ]
+    }
+    //http://xkcd.com/200/
+  ]
+}
